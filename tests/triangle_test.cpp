@@ -55,6 +55,6 @@ int main() {
     // Тест 5: нарушение неравенства — исключение
     assertThrows([](){ triangleArea(1, 2, 5); }, "Triangle inequality");
 
-    std::cout << "✅ All tests passed!\n";
+    std::cout << "All tests passed!\n";
     return 0;
 }
