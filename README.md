@@ -7,4 +7,4 @@
 Написаны unit-тесты с использованием `unittest`.  
 Запуск тестов:
 ```bash
-python3 -m unittest test_rectangle.py -v
+python3 -m unittest discover -s tests -p "test_*.py" -v
