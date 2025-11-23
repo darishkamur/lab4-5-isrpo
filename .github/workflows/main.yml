@@ -2,7 +2,7 @@ name: Run Unit Tests
 
 on:
   push:
-    branches: [ "rectangle" ]  
+    branches: [ "rectangle" ]
 
 jobs:
   test:
@@ -18,12 +18,13 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.14'  
+        python-version: '3.x'
 
     - name: Install pytest
       run: pip install pytest
 
     - name: Run unit tests
       run: |
-        $env:PYTHONPATH = "."
+        export PYTHONPATH="."
         pytest -v
+      shell: bash  
