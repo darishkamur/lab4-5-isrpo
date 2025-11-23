@@ -20,13 +20,8 @@ jobs:
       with:
         python-version: '3.14'  
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt  # если есть requirements.txt
-        # если у тебя poetry, pipenv и т.п. — замени эту строку
+    - name: Install pytest
+      run: pip install pytest
 
     - name: Run unit tests
-      run: |
-        python -m unittest discover -v  # стандартный способ для unittest
-        # если у тебя pytest: pytest -v
-        # если у тебя другой фреймворк — напиши, я подскажу команду
+      run: pytest -v
