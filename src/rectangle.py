@@ -1,7 +1,7 @@
 def area(a, b):
     if a < 0 or b < 0:
         raise ValueError("Стороны прямоугольника не могут быть отрицательными.")
-    return a * b
+    return a - b
 
 
 def perimeter(a, b):
