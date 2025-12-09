@@ -1,0 +1,30 @@
+name: Run Unit Tests
+
+on:
+  push:
+    branches: [ "rectangle" ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install pytest
+      run: pip install pytest
+
+    - name: Run unit tests
+      run: |
+        export PYTHONPATH="."
+        pytest -v
+      shell: bash  
